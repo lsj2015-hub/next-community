@@ -66,6 +66,10 @@ export default function SignIn() {
                   token,
                 };
               });
+              axios
+                .get(`${process.env.API_HOST}/me`)
+                .then((res) => setAuth((auth) => ({ ...auth, user: res.data })))
+                .catch(() => {});
               router.push(router.query.ref ?? '/me');
             })
             .catch((err) => {

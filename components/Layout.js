@@ -14,10 +14,10 @@ export default function Layout({ children }) {
           <Link href="/">
             <a className="btn btn-link">Home</a>
           </Link>
-          <Link href="/">
+          <Link href="/articles/general">
             <a className="btn btn-link">General Board</a>
           </Link>
-          <Link href="/">
+          <Link href="/articles/question">
             <a className="btn btn-link">Question Board</a>
           </Link>
           {!auth.loaded ? (
