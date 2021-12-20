@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import useFetch from '../../hooks/useFetch';
+import Head from 'next/head';
 
 export default function ArticleList({ title, category }) {
   const { data, error } = useFetch(

@@ -1,4 +1,6 @@
 import useFetch from '../../hooks/useFetch';
+import nl2br from 'react-nl2br';
+import Head from 'next/head';
 
 export default function AriticleView({ id }) {
   const { data, error } = useFetch(`${process.env.API_HOST}/articles/${id}`);
@@ -7,9 +9,12 @@ export default function AriticleView({ id }) {
   }
   return (
     <div className="container">
+      <Head>
+        <title>{data?.subject} - Magne Community</title>
+      </Head>
       <h1>{data?.subject}</h1>
       <hr />
-      <p>{data?.content}</p>
+      <p>{nl2br(data?.content)}</p>
     </div>
   );
 }
